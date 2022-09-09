@@ -1,4 +1,4 @@
-const listProductsResult = require('../views/pages/list-products/list-products.js')
+const listProductsResult = require('./list-products.js')
 
 const listProductsRoute = require('express').Router()
 

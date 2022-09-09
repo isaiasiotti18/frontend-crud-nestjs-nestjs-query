@@ -12,28 +12,43 @@
     <%- include('../../partials/navbar') %>
   </nav>
 
-  <form action="" class="row g-3">
+  <form id="form-create-product"method="post" action="/products/create-product/graphql" class="row g-3 mt-2">
 
     <div class="input-group mb-3">
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Product Name">
-        <label for="floatingInputGroup1">Product Name</label>
+        <input name="productName" type="text" class="form-control" id="productName" placeholder="Product Name">
+        <label for="productName">Product Name</label>
       </div>
     </div>
 
     <div class="form-floating">
-      <textarea class="form-control" placeholder="Leave a description here" id="floatingTextarea" style="height: 120px"></textarea>
-      <label for="floatingTextarea">Description</label>
+      <textarea name="description" class="form-control" placeholder="Leave a description here" id="description" style="height: 120px"></textarea>
+      <label for="description">Description</label>
     </div>
 
     <div class="form-floating">
-      <select class="form-select" id="floatingSelect" aria-label="Brands">
+      <input name="price" type="text" class="form-control" id="price" placeholder="Price">
+      <label for="price">Price</label>
+    </div>
+
+    <div class="form-floating">
+      <select name="brand" class="form-select" id="brand" aria-label="Brands">
         <option selected>Select one Brand</option>
         <% brands.forEach(brand => { %>
-        <option value="<%= brand.id %>"><%= brand.name %></option>
+          <option value="<%= brand.id %>"><%= brand.name %></option>
         <% }) %> 
       </select>
-      <label for="floatingSelect">Brand</label>
+      <label for="brand">Brand</label>
+    </div>
+
+    <div class="form-floating">
+      <select class="form-select" name="category" id="category" aria-label="Categories">
+        <option selected>Select one Category</option>
+        <% categories.forEach(category => { %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+        <% }) %> 
+        <label for="category">Category</label>
+      </select>
     </div>
 
     <div class="col-12">
@@ -41,10 +56,8 @@
     </div>
   </form>
 
-  <footer>
-    <%- include('../../partials/footer') %>
-  </footer>
+  <%- include('../../partials/footer') %>
+
 </body>
-</script>
 </html>
 

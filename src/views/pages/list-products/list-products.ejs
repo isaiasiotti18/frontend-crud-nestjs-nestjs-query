@@ -24,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-    <% products.forEach(product => { %> 
+    <% products?.forEach(product => { %> 
       <tr>
         <td><%= product.name %></td>
         <td><%= product.brand?.name %></td>
@@ -39,8 +39,6 @@
     </tbody>
   </table>
 
-  <footer>
-    <%- include('../../partials/footer') %>
-  </footer>
+  <%- include('../../partials/footer') %>
 </body>
 </html>

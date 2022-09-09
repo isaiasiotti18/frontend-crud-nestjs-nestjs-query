@@ -1,19 +1,18 @@
-require('dotenv').config()
-
 const consumeApi = require('../../../logic/consumeApi')
 
-const brands = `
-{
-  brands{
-    nodes{
-      id
-      name
-    }
-  }
-}
-`
-
 async function listBrandOptions() {
+
+  const brands = `
+    {
+      brands{
+        nodes{
+          id
+          name
+        }
+      }
+    }
+  `
+
   const result = await consumeApi(brands)
 
   return {
